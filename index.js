@@ -14,8 +14,8 @@ app.post("/send-email", (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
-      user: "aniruthasivakumar03@gmail.com",
-      pass: "fziupnbwaodnojat",
+      user:process.env.user ,
+      pass:process.env.pass ,
     },
   });
 
@@ -37,7 +37,7 @@ app.post("/send-email", (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 9000;
 
 app.listen(PORT, () => {
   console.log(`server is running on port:${PORT}`);
